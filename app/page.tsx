@@ -5,7 +5,6 @@ import { Button } from '@/components/ui/button'; // Shadcn Button
 import Hero from '@/components/home/Hero';
 import Services from '@/components/home/Services';
 import RecentPosters from '@/components/home/RecentPosters';
-import Team from '@/components/home/Team';
 import Footer from '@/components/home/Footer';
 
 // SEO Metadata

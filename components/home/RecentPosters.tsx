@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Button } from '../ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 // Sample poster data - replace with your actual posters
 const posters = [
@@ -18,18 +18,30 @@ const posters = [
 ];
 
 const images = [
-    "https://images.unsplash.com/photo-1517322048670-4fba75cbbb62?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1573790387438-4da905039392?q=80&w=3425&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1555400038-63f5ba517a47?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1554931670-4ebfabf6e7a9?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1546484475-7f7bd55792da?q=80&w=2581&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "/images/posters/1.jpeg",
+    "/images/posters/2.jpeg",
+    "/images/posters/3.jpeg",
+    "/images/posters/4.jpeg",
+    "/images/posters/5.png",
+    "/images/posters/6.jpeg",
+    "/images/posters/7.jpeg",
+    "/images/posters/8.jpeg",
+    "/images/posters/9.png",
+    "/images/posters/10.jpeg",
+    "/images/posters/11.jpeg",
+    "/images/posters/12.png",
+    "/images/posters/13.png",
+    "/images/posters/14.png",
 ];
 
 export default function RecentPosters() {
-    const [isPaused, setIsPaused] = useState(false);
+    const [randomImages, setRandomImages] = useState<string[]>([]);
 
-    // Duplicate posters array for seamless infinite scroll
-    const duplicatedPosters = [...posters, ...posters, ...posters];
+    useEffect(() => {
+        // Select 5 random unique images
+        const shuffled = [...images].sort(() => 0.5 - Math.random());
+        setRandomImages(shuffled.slice(0, 6));
+    }, []);
 
     return (
         <section className="py-20  relative overflow-hidden bg-black/30">
@@ -70,11 +82,16 @@ export default function RecentPosters() {
                         Check out our latest creative poster designs for various brands and campaigns
                     </motion.p>
                 </div>
+
+                {/* Remove CardsCarouselDemo if inconsistent, but keeping as placeholder for now unless asked to remove. 
+                   Actually, user request focuses on the 'images' array usage. 
+                   The previous map loop was just below CardsCarouselDemo.
+                */}
                 <CardsCarouselDemo />
 
-                {/* Infinite Scrolling Carousel */}
+                {/* Random 5 Posters Display */}
                 <div className="flex justify-center items-center overflow-x-scroll md:overflow-x-hidden py-5 px-4 ">
-                    {images.map((image, idx) => (
+                    {randomImages.map((image, idx) => (
                         <motion.div
                             key={"images" + idx}
                             style={{
@@ -94,7 +111,7 @@ export default function RecentPosters() {
                         >
                             <img
                                 src={image}
-                                alt="bali images"
+                                alt="recent work poster"
                                 width="500"
                                 height="500"
                                 className="rounded-lg h-40 w-40 md:h-40 md:w-40 object-cover shrink-0"

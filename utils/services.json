@@ -1,84 +1,297 @@
 {
-    "services": [
+    "categories": [
         {
-            "title": "Business Launch Kit",
-            "price": 15000,
-            "currency": "INR",
-            "billing": "one-time",
-            "description": "Complete brand launch package for startups.",
-            "features": [
-                "Google Business Registration",
-                "Professional Website",
-                "Custom Logo Design",
-                "Social Media Setup",
-                "Basic SEO"
+            "id": "monthly-posters",
+            "icon": "Palette",
+            "name": "Monthly Poster Packs",
+            "description": "Consistent, high-quality social media content to keep your audience engaged.",
+            "plans": [
+                {
+                    "name": "Starter Pack",
+                    "price": "2,999",
+                    "currency": "INR",
+                    "billing": "/month",
+                    "features": [
+                        "10 Creative Posters",
+                        "Story + Post Formats",
+                        "Standard Delivery",
+                        "Basic Revisions"
+                    ]
+                },
+                {
+                    "name": "Growth Pack",
+                    "price": "5,599",
+                    "currency": "INR",
+                    "billing": "/month",
+                    "features": [
+                        "20 Creative Posters",
+                        "Story + Post Formats",
+                        "Fast Delivery",
+                        "Priority Support",
+                        "Social Media Calendar"
+                    ],
+                    "popular": true
+                },
+                {
+                    "name": "Pro Pack",
+                    "price": "7,999",
+                    "currency": "INR",
+                    "billing": "/month",
+                    "features": [
+                        "28 Creative Posters (Daily)",
+                        "Story + Post Formats",
+                        "Fast Delivery",
+                        "24x7 Priority Support",
+                        "Dedicated Designer"
+                    ]
+                },
+                {
+                    "name": "Custom Plan",
+                    "price": "Custom",
+                    "currency": "",
+                    "billing": "",
+                    "description": "Tailored solutions for agencies and large brands.",
+                    "features": [
+                        "Custom Quantity",
+                        "Reels & Video Content",
+                        "Brand Strategy",
+                        "Account Management"
+                    ]
+                }
             ]
         },
         {
-            "title": "Monthly Poster Pack",
-            "price": 3000,
-            "currency": "INR",
-            "billing": "monthly",
-            "description": "10 custom posters monthly (Story + Post sizes).",
-            "features": [
-                "10 Posters Per Month",
-                "Story + Post Sizes",
-                "Unlimited Revisions",
-                "Fast 12hr Delivery",
-                "Cancel Anytime"
+            "id": "business-launch",
+            "icon": "Rocket",
+            "name": "Business Launch Kits",
+            "description": "All-in-one packages to kickstart your new business identity.",
+            "plans": [
+                {
+                    "name": "Basic Launch",
+                    "price": "9,999",
+                    "currency": "INR",
+                    "billing": "one-time",
+                    "features": [
+                        "Logo Design",
+                        "Business Card Design",
+                        "Google Business Setup",
+                        "Social Media Profile Setup"
+                    ]
+                },
+                {
+                    "name": "Standard Launch",
+                    "price": "14,999",
+                    "currency": "INR",
+                    "billing": "one-time",
+                    "features": [
+                        "Everything in Basic",
+                        "Single Page Website",
+                        "Letterhead & Envelope",
+                        "Basic SEO Setup"
+                    ],
+                    "popular": true
+                },
+                {
+                    "name": "Premium Launch",
+                    "price": "24,999",
+                    "currency": "INR",
+                    "billing": "one-time",
+                    "features": [
+                        "Everything in Standard",
+                        "Multi-page Website (5pg)",
+                        "Brand Guidelines Book",
+                        "1 Month Social Media Content"
+                    ]
+                },
+                {
+                    "name": "Custom Launch",
+                    "price": "Custom",
+                    "currency": "",
+                    "billing": "",
+                    "description": "For large scale business setups.",
+                    "features": [
+                        "E-commerce Setup",
+                        "Complete Branding",
+                        "Marketing Strategy",
+                        "Legal Assistance"
+                    ]
+                }
             ]
         },
         {
-            "title": "Poster & Banner Design",
-            "price": 399,
-            "currency": "INR",
-            "billing": "starting-from",
-            "description": "Eye-catching visuals for events & promotions.",
-            "features": [
-                "2 Posters (Story + Post)",
-                "Custom Illustrations",
-                "Print-Ready",
-                "Multiple Formats",
-                "Fast Turnaround"
+            "id": "web-app",
+            "icon": "Monitor",
+            "name": "Web & App Development",
+            "description": "High-performance websites and applications tailored to your needs.",
+            "plans": [
+                {
+                    "name": "Static Website",
+                    "price": "7,999",
+                    "currency": "INR",
+                    "billing": "starting",
+                    "features": [
+                        "Responsive Design",
+                        "5 Static Pages",
+                        "Contact Form",
+                        "Fast Loading Speed",
+                        "Basic SEO"
+                    ]
+                },
+                {
+                    "name": "Dynamic Web App",
+                    "price": "18,999",
+                    "currency": "INR",
+                    "billing": "starting",
+                    "features": [
+                        "Next.js / React Framework",
+                        "Admin Dashboard",
+                        "Database Integration",
+                        "User Authentication",
+                        "Dynamic Content"
+                    ],
+                    "popular": true
+                },
+                {
+                    "name": "E-commerce & App",
+                    "price": "34,999",
+                    "currency": "INR",
+                    "billing": "starting",
+                    "features": [
+                        "Full E-commerce Store",
+                        "Payment Gateway",
+                        "Mobile App (PWA/Native)",
+                        "Inventory Management",
+                        "Premium Support"
+                    ]
+                },
+                {
+                    "name": "Custom Solution",
+                    "price": "Custom",
+                    "currency": "",
+                    "billing": "",
+                    "description": "Enterprise grade software development.",
+                    "features": [
+                        "SaaS Development",
+                        "CRM/ERP Systems",
+                        "Cloud Architecture",
+                        "Microservices"
+                    ]
+                }
             ]
         },
         {
-            "title": "Video Production",
-            "price": 599,
-            "currency": "INR",
-            "billing": "starting-from",
-            "description": "Engaging video content that tells your story.",
-            "features": [
-                "Animation Video",
-                "4K Editing",
-                "Motion Graphics",
-                "Reels & Ads"
+            "id": "graphics-design",
+            "icon": "PenTool",
+            "name": "Graphics & Design",
+            "description": "Creative visual solutions for your specific needs.",
+            "plans": [
+                {
+                    "name": "Logo Design",
+                    "price": "999",
+                    "currency": "INR",
+                    "billing": "starting",
+                    "features": [
+                        "2 Concepts",
+                        "High Resolution",
+                        "Source Files",
+                        "3D Mockup"
+                    ]
+                },
+                {
+                    "name": "Poster & Illustration",
+                    "price": "999",
+                    "currency": "INR",
+                    "billing": "starting",
+                    "features": [
+                        "Custom Illustration",
+                        "Event Posters",
+                        "Social Media Creatives",
+                        "Print Ready Files"
+                    ]
+                },
+                {
+                    "name": "Motion Graphics",
+                    "price": "1,999",
+                    "currency": "INR",
+                    "billing": "starting",
+                    "features": [
+                        "Logo Animation",
+                        "Intro/Outro",
+                        "Explainer Videos",
+                        "Social Media Reels"
+                    ]
+                },
+                {
+                    "name": "Packaging Design",
+                    "price": "2,499",
+                    "currency": "INR",
+                    "billing": "starting",
+                    "features": [
+                        "Product Box Design",
+                        "Label Design",
+                        "3D Mockups",
+                        "Print Ready Files"
+                    ]
+                }
             ]
         },
         {
-            "title": "Website Development",
-            "price": 13999,
-            "currency": "INR",
-            "billing": "starting-from",
-            "description": "Fast, responsive, and SEO-optimized websites.",
-            "features": [
-                "Responsive Design",
-                "Static and Dynamic",
-                "Basic SEO",
-                "Hosting & Support"
-            ]
-        },
-        {
-            "title": "App Development",
-            "price": 17999,
-            "currency": "INR",
-            "billing": "starting-from",
-            "description": "Scalable web apps with modern tech stack.",
-            "features": [
-                "Android, iOS, Windows, and Linux",
-                "Static and Dynamic",
-                "Play Store & App Store Deployment",
-                "Updates & Support"
+            "id": "ads-marketing",
+            "icon": "Share2",
+            "name": "Ads & Marketing",
+            "description": "Boost your reach with targeted ad campaigns and video content.",
+            "plans": [
+                {
+                    "name": "Starter Ads",
+                    "price": "4,999",
+                    "currency": "INR",
+                    "billing": "+ Ad Spend",
+                    "features": [
+                        "Meta Ads (FB/Insta)",
+                        "1 Ad Creative",
+                        "Audience Targeting",
+                        "Weekly Report"
+                    ]
+                },
+                {
+                    "name": "Growth Campaign",
+                    "price": "9,999",
+                    "currency": "INR",
+                    "billing": "+ Ad Spend",
+                    "features": [
+                        "Meta & Google Ads",
+                        "3 Ad Creatives (img/video)",
+                        "Retargeting Setup",
+                        "Conversion Tracking",
+                        "A/B Testing"
+                    ],
+                    "popular": true
+                },
+                {
+                    "name": "360° Management",
+                    "price": "19,999",
+                    "currency": "INR",
+                    "billing": "/month",
+                    "features": [
+                        "All Ad Platforms",
+                        "Unlimited Ad Creatives",
+                        "Video Ads Production",
+                        "Daily Optimization",
+                        "Dedicated Manager"
+                    ]
+                },
+                {
+                    "name": "Custom Marketing",
+                    "price": "Custom",
+                    "currency": "",
+                    "billing": "",
+                    "features": [
+                        "Influencer Marketing",
+                        "PR Campaigns",
+                        "Viral Marketing",
+                        "Content Strategy"
+                    ]
+                }
             ]
         }
     ]

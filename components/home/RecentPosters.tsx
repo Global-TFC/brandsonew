@@ -71,10 +71,6 @@ export default function RecentPosters() {
                     </motion.p>
                 </div>
 
-                {/* Remove CardsCarouselDemo if inconsistent, but keeping as placeholder for now unless asked to remove. 
-                   Actually, user request focuses on the 'images' array usage. 
-                   The previous map loop was just below CardsCarouselDemo.
-                */}
                 <CardsCarouselDemo />
 
                 <motion.div

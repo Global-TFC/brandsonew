@@ -77,6 +77,21 @@ export default function RecentPosters() {
                 */}
                 <CardsCarouselDemo />
 
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="text-center md:-mt-[50px]"
+                >
+                    <Button
+                        asChild
+                        size="lg"
+                        className="bg-gradient-to-r from-emerald-600 to-green-700 hover:from-emerald-700 hover:to-green-800 text-white font-semibold px-10 py-6 text-lg shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/40 transition-all duration-300"
+                    >
+                        <Link href="/portfolios/development">View All Projects</Link>
+                    </Button>
+                </motion.div>
+
                 {/* Random 5 Posters Display */}
                 <div className="flex justify-center items-center overflow-x-scroll md:overflow-x-hidden py-5 px-4 ">
                     {randomImages.map((image, idx) => (
@@ -118,9 +133,9 @@ export default function RecentPosters() {
                     <Button
                         asChild
                         size="lg"
-                        className="bg-gradient-to-r from-emerald-600 to-green-700 hover:from-emerald-700 hover:to-green-800 text-white font-semibold px-10 py-6 text-lg shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/40 transition-all duration-300"
+                        className="bg-gradient-to-r mt-6 from-emerald-600 to-green-700 hover:from-emerald-700 hover:to-green-800 text-white font-semibold px-10 py-6 text-lg shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/40 transition-all duration-300"
                     >
-                        <Link href="/portfolios">View All Posters</Link>
+                        <Link href="/portfolios/posters">View All Posters</Link>
                     </Button>
                 </motion.div>
             </div>

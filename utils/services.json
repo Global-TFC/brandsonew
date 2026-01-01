@@ -1,0 +1,85 @@
+{
+    "services": [
+        {
+            "title": "Business Launch Kit",
+            "price": 15000,
+            "currency": "INR",
+            "billing": "one-time",
+            "description": "Complete brand launch package for startups.",
+            "features": [
+                "Google Business Registration",
+                "Professional Website",
+                "Custom Logo Design",
+                "Social Media Setup",
+                "Basic SEO"
+            ]
+        },
+        {
+            "title": "Monthly Poster Pack",
+            "price": 3000,
+            "currency": "INR",
+            "billing": "monthly",
+            "description": "10 custom posters monthly (Story + Post sizes).",
+            "features": [
+                "10 Posters Per Month",
+                "Story + Post Sizes",
+                "Unlimited Revisions",
+                "Fast 12hr Delivery",
+                "Cancel Anytime"
+            ]
+        },
+        {
+            "title": "Poster & Banner Design",
+            "price": 399,
+            "currency": "INR",
+            "billing": "starting-from",
+            "description": "Eye-catching visuals for events & promotions.",
+            "features": [
+                "2 Posters (Story + Post)",
+                "Custom Illustrations",
+                "Print-Ready",
+                "Multiple Formats",
+                "Fast Turnaround"
+            ]
+        },
+        {
+            "title": "Video Production",
+            "price": 599,
+            "currency": "INR",
+            "billing": "starting-from",
+            "description": "Engaging video content that tells your story.",
+            "features": [
+                "Animation Video",
+                "4K Editing",
+                "Motion Graphics",
+                "Reels & Ads"
+            ]
+        },
+        {
+            "title": "Website Development",
+            "price": 13999,
+            "currency": "INR",
+            "billing": "starting-from",
+            "description": "Fast, responsive, and SEO-optimized websites.",
+            "features": [
+                "Responsive Design",
+                "Static and Dynamic",
+                "Basic SEO",
+                "Hosting & Support"
+            ]
+        },
+        {
+            "title": "App Development",
+            "price": 17999,
+            "currency": "INR",
+            "billing": "starting-from",
+            "description": "Scalable web apps with modern tech stack.",
+            "features": [
+                "Android, iOS, Windows, and Linux",
+                "Static and Dynamic",
+                "Play Store & App Store Deployment",
+                "Updates & Support"
+            ]
+        }
+    ]
+}

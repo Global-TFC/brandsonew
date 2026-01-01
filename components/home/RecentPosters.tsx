@@ -5,18 +5,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 
-// Sample poster data - replace with your actual posters
-const posters = [
-    { id: 1, title: 'Summer Sale Campaign', image: '/posters/poster1.jpg', category: 'Marketing' },
-    { id: 2, title: 'Product Launch', image: '/posters/poster2.jpg', category: 'Branding' },
-    { id: 3, title: 'Event Promotion', image: '/posters/poster3.jpg', category: 'Event' },
-    { id: 4, title: 'Social Media Post', image: '/posters/poster4.jpg', category: 'Social' },
-    { id: 5, title: 'Brand Identity', image: '/posters/poster5.jpg', category: 'Branding' },
-    { id: 6, title: 'Special Offer', image: '/posters/poster6.jpg', category: 'Marketing' },
-    { id: 7, title: 'New Collection', image: '/posters/poster7.jpg', category: 'Fashion' },
-    { id: 8, title: 'Digital Ad', image: '/posters/poster8.jpg', category: 'Advertising' },
-];
-
 const images = [
     "/images/posters/1.jpeg",
     "/images/posters/2.jpeg",

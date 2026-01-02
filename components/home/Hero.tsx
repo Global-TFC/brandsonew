@@ -1,4 +1,5 @@
-import { motion, AnimatePresence } from 'framer-motion'; // For infinite scroll and animations
+'use client';
+import { motion } from 'framer-motion'; // For infinite scroll and animations
 import { Button } from '../ui/button';
 import Link from 'next/link';
 

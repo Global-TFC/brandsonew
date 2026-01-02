@@ -1,3 +1,4 @@
+'use client';
 import { motion } from 'framer-motion';
 import { Button } from '../ui/button';
 import Link from 'next/link';
@@ -283,8 +284,8 @@ export default function Services() {
                                                 viewport={{ once: true }}
                                                 transition={{ delay: 0.5 + (i * 0.15), duration: 0.5 }}
                                                 className={`h-2 rounded-full ${i === 0 ? 'bg-purple-400' :
-                                                        i === 2 ? 'bg-blue-400' :
-                                                            i === 3 ? 'bg-pink-400' : 'bg-white/20'
+                                                    i === 2 ? 'bg-blue-400' :
+                                                        i === 3 ? 'bg-pink-400' : 'bg-white/20'
                                                     }`}
                                             />
                                         ))}

@@ -1,52 +1,66 @@
-'use client'
-// import { Metadata } from 'next';
-import Link from 'next/link';
-import { Button } from '@/components/ui/button'; // Shadcn Button
 import Hero from '@/components/home/Hero';
 import Services from '@/components/home/Services';
-import RecentPosters from '@/components/home/RecentPosters';
-import Footer from '@/components/home/Footer';
+import dynamic from 'next/dynamic';
+import Script from 'next/script';
 
-// SEO Metadata
-// export const metadata: Metadata = {
-//   title: 'Brandso - Digital Solutions Agency | Web, App, Graphics, Video',
-//   description: 'Brandso provides top-tier digital solutions including web and app development, graphics and poster design, video generation and editing. Explore our packages and portfolio.',
-//   keywords: 'digital agency, web development, app development, graphic design, video editing, UI/UX',
-//   openGraph: {
-//     title: 'Brandso Agency',
-//     description: 'Innovative digital solutions for your business.',
-//     images: '/og-image.png', // Add your OG image
-//   },
-// };
-
-// Placeholder data
-
-const teamMembers = [
-  { name: 'John Doe', role: 'CEO & Founder', bio: 'Visionary leader with 10+ years in digital solutions.', image: '/team/john.jpg' },
-  { name: 'Jane Smith', role: 'Lead Designer', bio: 'Expert in graphics and UI/UX.', image: '/team/jane.jpg' },
-  { name: 'Alex Johnson', role: 'Video Specialist', bio: 'Master of video generation and editing.', image: '/team/alex.jpg' },
-  { name: 'Emily Davis', role: 'Developer', bio: 'Full-stack dev for web and apps.', image: '/team/emily.jpg' },
-  { name: 'Michael Brown', role: 'Marketing Guru', bio: 'Drives digital marketing strategies.', image: '/team/michael.jpg' },
-];
+// Lazy load heavy components below the fold
+const RecentPosters = dynamic(() => import('@/components/home/RecentPosters'), {
+  ssr: true, // Keep SSR for SEO content, but code-split the JS
+});
+const Footer = dynamic(() => import('@/components/home/Footer'));
 
 export default function Home() {
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Agency",
+    "name": "Brandso",
+    "url": "https://brandso.vercel.app",
+    "logo": "/images/logo/logo.png",
+    "sameAs": [
+      "https://facebook.com/brandso",
+      "https://instagram.com/brandso",
+      "https://twitter.com/brandso"
+    ],
+    "description": "Brandso is a full-service digital agency specializing in web development, app development, graphics, video production, and digital marketing.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "India",
+      "addressCountry": "IN"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-0000000000",
+      "contactType": "customer service"
+    }
+  };
+
   return (
-    <div className="">
-      {/* Hero Section */}
-      <div className="max-w-7xl mx-auto">
-        <Hero />
-      </div>
+    <div className="flex flex-col min-h-screen">
+      <Script
+        id="json-ld-org"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
 
-      {/* Services Section */}
-      <Services />
+      <main className="flex-grow">
+        {/* Hero Section - LCP Candidate, load eager */}
+        <section className="relative w-full max-w-7xl mx-auto">
+          <Hero />
+        </section>
 
-      {/* Recent Posters Section */}
-      <RecentPosters />
+        {/* Services Section */}
+        <section id="services" className="relative w-full">
+          <Services />
+        </section>
 
-      {/* Team Section */}
-      {/* <Team /> */}
+        {/* Recent Posters Section - Lazy loaded */}
+        <section id="portfolio" className="relative w-full">
+          <RecentPosters />
+        </section>
+      </main>
 
+      {/* Footer */}
       <Footer />
     </div>
   );

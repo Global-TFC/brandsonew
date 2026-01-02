@@ -70,7 +70,7 @@
                     "name": "Basic Launch",
                     "price": "9,999",
                     "currency": "INR",
-                    "billing": "one-time",
+                    "billing": "starting",
                     "features": [
                         "Logo Design",
                         "Business Card Design",
@@ -82,7 +82,7 @@
                     "name": "Standard Launch",
                     "price": "14,999",
                     "currency": "INR",
-                    "billing": "one-time",
+                    "billing": "starting",
                     "features": [
                         "Everything in Basic",
                         "Single Page Website",
@@ -95,11 +95,10 @@
                     "name": "Premium Launch",
                     "price": "24,999",
                     "currency": "INR",
-                    "billing": "one-time",
+                    "billing": "starting",
                     "features": [
                         "Everything in Standard",
-                        "Multi-page Website (5pg)",
-                        "Brand Guidelines Book",
+                        "Multi-page Website",
                         "1 Month Social Media Content"
                     ]
                 },
@@ -131,7 +130,7 @@
                     "billing": "starting",
                     "features": [
                         "Responsive Design",
-                        "5 Static Pages",
+                        "3 Static Pages",
                         "Contact Form",
                         "Fast Loading Speed",
                         "Basic SEO"
@@ -143,9 +142,8 @@
                     "currency": "INR",
                     "billing": "starting",
                     "features": [
-                        "Next.js / React Framework",
+                        "Popular Tools & Frameworks ( Next.js / Shopify / WooCommerce )",
                         "Admin Dashboard",
-                        "Database Integration",
                         "User Authentication",
                         "Dynamic Content"
                     ],
@@ -153,7 +151,7 @@
                 },
                 {
                     "name": "E-commerce & App",
-                    "price": "34,999",
+                    "price": "24,999",
                     "currency": "INR",
                     "billing": "starting",
                     "features": [
@@ -186,6 +184,18 @@
             "description": "Creative visual solutions for your specific needs.",
             "plans": [
                 {
+                    "name": "Poster & Illustration",
+                    "price": "399",
+                    "currency": "INR",
+                    "billing": "starting",
+                    "features": [
+                        "Custom Illustration",
+                        "Event Posters",
+                        "Social Media Creatives",
+                        "Print Ready Files"
+                    ]
+                },
+                {
                     "name": "Logo Design",
                     "price": "999",
                     "currency": "INR",
@@ -198,20 +208,8 @@
                     ]
                 },
                 {
-                    "name": "Poster & Illustration",
-                    "price": "999",
-                    "currency": "INR",
-                    "billing": "starting",
-                    "features": [
-                        "Custom Illustration",
-                        "Event Posters",
-                        "Social Media Creatives",
-                        "Print Ready Files"
-                    ]
-                },
-                {
                     "name": "Motion Graphics",
-                    "price": "1,999",
+                    "price": "999",
                     "currency": "INR",
                     "billing": "starting",
                     "features": [
@@ -223,7 +221,7 @@
                 },
                 {
                     "name": "Packaging Design",
-                    "price": "2,499",
+                    "price": "1,499",
                     "currency": "INR",
                     "billing": "starting",
                     "features": [
@@ -243,7 +241,7 @@
             "plans": [
                 {
                     "name": "Starter Ads",
-                    "price": "4,999",
+                    "price": "499",
                     "currency": "INR",
                     "billing": "+ Ad Spend",
                     "features": [
@@ -255,7 +253,7 @@
                 },
                 {
                     "name": "Growth Campaign",
-                    "price": "9,999",
+                    "price": "1499",
                     "currency": "INR",
                     "billing": "+ Ad Spend",
                     "features": [
@@ -269,13 +267,13 @@
                 },
                 {
                     "name": "360° Management",
-                    "price": "19,999",
+                    "price": "3499",
                     "currency": "INR",
                     "billing": "/month",
                     "features": [
                         "All Ad Platforms",
-                        "Unlimited Ad Creatives",
-                        "Video Ads Production",
+                        "Limited Ad Creatives",
+                        "Limited Video Ads Production",
                         "Daily Optimization",
                         "Dedicated Manager"
                     ]

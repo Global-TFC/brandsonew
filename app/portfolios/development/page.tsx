@@ -57,12 +57,12 @@ const CardModal = ({ card, onClose }: { card: Card; onClose: () => void }) => {
     useOutsideClick(containerRef as React.RefObject<HTMLDivElement>, () => onClose());
 
     return (
-        <div className="fixed inset-0 z-50 h-screen overflow-auto">
+        <div className="fixed inset-0 z-50 h-screen pt-20 overflow-auto">
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                className="fixed inset-0 h-full w-full bg-black/80 backdrop-blur-lg"
+                className="fixed inset-0 h-full w-full bg-black/40 backdrop-blur-lg"
             />
             <motion.div
                 initial={{ opacity: 0, scale: 0.95, y: 20 }}
@@ -73,7 +73,7 @@ const CardModal = ({ card, onClose }: { card: Card; onClose: () => void }) => {
                 className="relative z-50 mx-auto my-10 h-fit max-w-5xl rounded-3xl bg-white p-4 font-sans md:p-10 dark:bg-neutral-900 shadow-2xl"
             >
                 <button
-                    className="sticky bottom-4 right-0 ml-auto flex h-8 w-8 items-center justify-center rounded-full bg-black dark:bg-white hover:bg-neutral-800 transition-colors"
+                    className="hidden md:flex sticky bottom-4 right-0 ml-auto flex h-12 w-12 items-center justify-center rounded-full bg-black dark:bg-white hover:bg-neutral-800 transition-colors"
                     onClick={onClose}
                 >
                     <IconX className="h-6 w-6 text-neutral-100 dark:text-neutral-900" />
@@ -91,6 +91,12 @@ const CardModal = ({ card, onClose }: { card: Card; onClose: () => void }) => {
                     {card.title}
                 </motion.p>
                 <div className="py-10">{card.content}</div>
+                <button
+                    className="sticky md:hidden bottom-8 right-0 ml-auto flex h-12 w-12 items-center justify-center rounded-full bg-black dark:bg-white hover:bg-neutral-800 transition-colors"
+                    onClick={onClose}
+                >
+                    <IconX className="h-6 w-6 text-neutral-100 dark:text-neutral-900" />
+                </button>
             </motion.div>
         </div>
     );

@@ -12,6 +12,7 @@ import { cn } from "@/lib/utils";
 import { AnimatePresence, motion, useScroll, useTransform } from "motion/react";
 import { ImageProps } from "next/image";
 import { useOutsideClick } from "@/hooks/use-outside-click";
+import { projects } from "@/utils/projects";
 
 type Card = {
     src: string;
@@ -25,7 +26,7 @@ export default function Development() {
 
     return (
         <div className="min-h-screen relative">
-            <DevelopmentParallax cards={data} onCardSelect={setSelectedCard} />
+            <DevelopmentParallax cards={projects} onCardSelect={setSelectedCard} />
 
             <AnimatePresence>
                 {selectedCard && (
@@ -250,7 +251,7 @@ const BlurImage = ({
 };
 
 // Data
-const DummyContent = () => {
+export const DummyContent = () => {
     return (
         <>
             {[...new Array(3).fill(1)].map((_, index) => {

@@ -6,9 +6,9 @@ import Team from '@/components/about/Team';
 
 export default function AboutPage() {
     const stats = [
-        { icon: Trophy, value: '50+', label: 'Projects Completed' },
-        { icon: Users, value: '30+', label: 'Happy Clients' },
-        { icon: Zap, value: '5+', label: 'Years Experience' },
+        { icon: Trophy, value: '30+', label: 'Projects Completed' },
+        { icon: Users, value: '20+', label: 'Happy Clients' },
+        { icon: Zap, value: '3+', label: 'Years Experience' },
         { icon: Palette, value: '100%', label: 'Creative Freedom' }
     ];
 
@@ -44,7 +44,7 @@ export default function AboutPage() {
     return (
         <main className="bg-black min-h-screen">
             {/* Hero Section */}
-            <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+            <section className="relative min-h-[calc(100vh-15rem)] flex items-center justify-center overflow-hidden pt-20">
                 {/* Animated Background */}
                 <div className="absolute inset-0 overflow-hidden">
                     <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-teal-500/10 to-emerald-500/10 rounded-full blur-3xl animate-pulse"></div>
@@ -225,7 +225,7 @@ export default function AboutPage() {
                     </motion.div>
                 </div>
             </section>
-            <Team />
+            {/* <Team /> */}
             <Footer />
         </main>
     );

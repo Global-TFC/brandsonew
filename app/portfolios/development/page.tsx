@@ -57,7 +57,7 @@ const CardModal = ({ card, onClose }: { card: Card; onClose: () => void }) => {
     useOutsideClick(containerRef as React.RefObject<HTMLDivElement>, () => onClose());
 
     return (
-        <div className="fixed inset-0 z-[100] h-screen overflow-auto">
+        <div className="fixed inset-0 z-50 h-screen overflow-auto">
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -70,10 +70,10 @@ const CardModal = ({ card, onClose }: { card: Card; onClose: () => void }) => {
                 exit={{ opacity: 0, scale: 0.95, y: 20 }}
                 ref={containerRef}
                 layoutId={`card-${card.title}`}
-                className="relative z-[110] mx-auto my-10 h-fit max-w-5xl rounded-3xl bg-white p-4 font-sans md:p-10 dark:bg-neutral-900 shadow-2xl"
+                className="relative z-50 mx-auto my-10 h-fit max-w-5xl rounded-3xl bg-white p-4 font-sans md:p-10 dark:bg-neutral-900 shadow-2xl"
             >
                 <button
-                    className="sticky top-4 right-0 ml-auto flex h-8 w-8 items-center justify-center rounded-full bg-black dark:bg-white hover:bg-neutral-800 transition-colors"
+                    className="sticky bottom-4 right-0 ml-auto flex h-8 w-8 items-center justify-center rounded-full bg-black dark:bg-white hover:bg-neutral-800 transition-colors"
                     onClick={onClose}
                 >
                     <IconX className="h-6 w-6 text-neutral-100 dark:text-neutral-900" />
@@ -189,8 +189,8 @@ const DevelopmentCard = ({
             onClick={onClick}
             className="relative z-10 flex h-60 w-full flex-col items-start justify-start overflow-hidden rounded-3xl bg-gray-100 md:h-[25rem] dark:bg-neutral-900 hover:shadow-xl transition-shadow duration-300"
         >
-            <div className="pointer-events-none absolute inset-x-0 top-0 z-30 h-full bg-gradient-to-b from-black/50 via-transparent to-transparent" />
-            <div className="relative z-40 p-8">
+            <div className="pointer-events-none absolute inset-x-0 top-0 z-20 h-full bg-gradient-to-b from-black/50 via-transparent to-transparent" />
+            <div className="relative z-20 p-8">
                 <motion.p
                     layoutId={`category-${card.title}`}
                     className="text-left font-sans text-sm font-medium text-white md:text-base"

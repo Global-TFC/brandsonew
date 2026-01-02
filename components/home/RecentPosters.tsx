@@ -4,23 +4,9 @@ import { Button } from '../ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
+import designsData from "@/utils/designs.json";
 
-const images = [
-    "/images/posters/1.jpeg",
-    "/images/posters/2.jpeg",
-    "/images/posters/3.jpeg",
-    "/images/posters/4.jpeg",
-    "/images/posters/5.png",
-    "/images/posters/6.jpeg",
-    "/images/posters/7.jpeg",
-    "/images/posters/8.jpeg",
-    "/images/posters/9.png",
-    "/images/posters/10.jpeg",
-    "/images/posters/11.jpeg",
-    "/images/posters/12.png",
-    "/images/posters/13.png",
-    "/images/posters/14.png",
-];
+const images = designsData.images;
 
 export default function RecentPosters() {
     const [randomImages, setRandomImages] = useState<string[]>([]);

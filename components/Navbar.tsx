@@ -31,7 +31,7 @@ export function NavbarComponent() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     return (
-        <div className="relative w-full sticky -top-4 md:-top-2 z-50">
+        <div className="relative w-full sticky -top-4 md:-top-2 z-20">
             <Navbar className="rounded-full">
                 {/* Desktop Navigation */}
                 <NavBody>

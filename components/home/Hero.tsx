@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export default function Hero() {
     return (
-        <section className="relative h-screen flex items-center overflow-hidden">
+        <section className="relative h-[calc(100vh-6rem)] flex items-center overflow-hidden">
             {/* Dotted pattern background */}
             <div className="absolute inset-0 opacity-20">
                 <div className="absolute top-20 left-20 w-32 h-32 bg-[radial-gradient(circle,_#10b981_1px,_transparent_1px)] bg-[length:20px_20px] animate-pulse" />
@@ -52,16 +52,16 @@ export default function Hero() {
 
                     {/* CTA Buttons */}
                     <div className="flex flex-wrap gap-4 pt-4">
-                        <Button
+                        {/* <Button
                             asChild
                             size="lg"
                             className="bg-white text-black hover:bg-gray-200 font-semibold px-8 transition-all hover:scale-105"
                         >
-                            <Link href="/contact">Free Consultation</Link>
-                        </Button>
+                            <Link href="/contact">Get Started</Link>
+                        </Button> */}
                         <Button
                             asChild
-                            variant="outline"
+                            variant="default"
                             size="lg"
                             className="border-emerald-500 text-emerald-400 hover:bg-emerald-950/50 font-semibold px-8 transition-all hover:scale-105"
                         >

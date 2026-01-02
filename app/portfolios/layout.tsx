@@ -6,9 +6,9 @@ import { LayoutGrid, Code, Palette, Video } from 'lucide-react';
 import Footer from '@/components/home/Footer';
 
 const tabs = [
-    { name: 'All Work', href: '/portfolios', icon: LayoutGrid },
+    // { name: 'All Work', href: '/portfolios', icon: LayoutGrid },
     { name: 'Posters & Graphics', href: '/portfolios/posters', icon: Palette },
-    { name: 'Development', href: '/portfolios/development', icon: Code },
+    { name: 'Projects', href: '/portfolios/development', icon: Code },
     // { name: 'Video Production', href: '/portfolios/video', icon: Video },
 ];
 
@@ -66,8 +66,8 @@ export default function PortfoliosLayout({ children }: { children: React.ReactNo
                                         animate={{ opacity: 1, y: 0 }}
                                         transition={{ delay: 0.3 + index * 0.1 }}
                                         className={`relative px-6 py-3 rounded-xl flex items-center gap-2 border transition-all duration-300 ${isActive
-                                                ? 'bg-emerald-500/10 border-emerald-500 text-emerald-400'
-                                                : 'bg-white/5 border-white/10 text-gray-400 hover:border-emerald-500/50 hover:text-emerald-300'
+                                            ? 'bg-emerald-500/10 border-emerald-500 text-emerald-400'
+                                            : 'bg-white/5 border-white/10 text-gray-400 hover:border-emerald-500/50 hover:text-emerald-300'
                                             }`}
                                     >
                                         <Icon size={18} />

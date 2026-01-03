@@ -125,7 +125,7 @@
             "plans": [
                 {
                     "name": "Static Website",
-                    "price": "7,999",
+                    "price": "5,999",
                     "currency": "INR",
                     "billing": "starting",
                     "features": [
@@ -138,7 +138,7 @@
                 },
                 {
                     "name": "Dynamic Web App",
-                    "price": "18,999",
+                    "price": "12,999",
                     "currency": "INR",
                     "billing": "starting",
                     "features": [
@@ -151,7 +151,7 @@
                 },
                 {
                     "name": "E-commerce & App",
-                    "price": "24,999",
+                    "price": "19,999",
                     "currency": "INR",
                     "billing": "starting",
                     "features": [

@@ -63,7 +63,7 @@ export default function RecentPosters() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-center md:-mt-[50px]"
+                    className="text-center"
                 >
                     <Button
                         asChild

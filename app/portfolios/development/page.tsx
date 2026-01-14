@@ -115,65 +115,70 @@ const DevelopmentParallax = ({
     onCardSelect: (card: Card) => void;
 }) => {
     const { scrollYProgress } = useScroll();
-    const [isMobile, setIsMobile] = useState(false);
+    const [numColumns, setNumColumns] = useState(1);
+    const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
-        const checkMobile = () => {
-            setIsMobile(window.innerWidth < 768);
+        setMounted(true);
+        const updateColumns = () => {
+            const width = window.innerWidth;
+            if (width >= 1280) {
+                setNumColumns(4); // xl: 4 columns
+            } else if (width >= 1024) {
+                setNumColumns(3); // lg: 3 columns
+            } else if (width >= 768) {
+                setNumColumns(2); // md: 2 columns
+            } else {
+                setNumColumns(1); // mobile: 1 column
+            }
         };
-        checkMobile();
-        window.addEventListener("resize", checkMobile);
-        return () => window.removeEventListener("resize", checkMobile);
+        updateColumns();
+        window.addEventListener("resize", updateColumns);
+        return () => window.removeEventListener("resize", updateColumns);
     }, []);
 
-    // 4 columns logic
+    // Parallax transforms for up to 4 columns
     const translateFirst = useTransform(scrollYProgress, [0, 1], [0, -100]);
     const translateSecond = useTransform(scrollYProgress, [0, 1], [0, 100]);
     const translateThird = useTransform(scrollYProgress, [0, 1], [0, -100]);
     const translateFourth = useTransform(scrollYProgress, [0, 1], [0, 100]);
 
-    const fourth = Math.ceil(cards.length / 4);
+    // Round-robin distribution of cards into active columns
+    const columns: Card[][] = Array.from({ length: numColumns }, () => []);
 
-    const firstPart = cards.slice(0, fourth);
-    const secondPart = cards.slice(fourth, 2 * fourth);
-    const thirdPart = cards.slice(2 * fourth, 3 * fourth);
-    const fourthPart = cards.slice(3 * fourth);
+    cards.forEach((card, index) => {
+        const colIndex = index % numColumns;
+        columns[colIndex].push(card);
+    });
+
+    const transforms = [
+        translateFirst,
+        translateSecond,
+        translateThird,
+        translateFourth,
+    ];
 
     return (
         <div
             className={cn("w-full py-10", className)}
         >
-            <div
-                className="grid grid-cols-1 md:grid-cols-4 items-start max-w-7xl mx-auto gap-8 px-4"
-            >
-                <div className="grid gap-8">
-                    {firstPart.map((card, idx) => (
-                        <motion.div style={{ y: isMobile ? 0 : translateFirst }} key={"grid-1" + idx}>
-                            <DevelopmentCard card={card} index={idx} onClick={() => onCardSelect(card)} />
-                        </motion.div>
-                    ))}
-                </div>
-                <div className="grid gap-8">
-                    {secondPart.map((card, idx) => (
-                        <motion.div style={{ y: isMobile ? 0 : translateSecond }} key={"grid-2" + idx}>
-                            <DevelopmentCard card={card} index={idx} onClick={() => onCardSelect(card)} />
-                        </motion.div>
-                    ))}
-                </div>
-                <div className="grid gap-8">
-                    {thirdPart.map((card, idx) => (
-                        <motion.div style={{ y: isMobile ? 0 : translateThird }} key={"grid-3" + idx}>
-                            <DevelopmentCard card={card} index={idx} onClick={() => onCardSelect(card)} />
-                        </motion.div>
-                    ))}
-                </div>
-                <div className="grid gap-8">
-                    {fourthPart.map((card, idx) => (
-                        <motion.div style={{ y: isMobile ? 0 : translateFourth }} key={"grid-4" + idx}>
-                            <DevelopmentCard card={card} index={idx} onClick={() => onCardSelect(card)} />
-                        </motion.div>
-                    ))}
-                </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 items-start max-w-7xl mx-auto gap-8 px-4">
+                {columns.map((columnCards, colIdx) => (
+                    <div className="grid gap-8" key={`column-${colIdx}`}>
+                        {columnCards.map((card, idx) => (
+                            <motion.div
+                                style={{ y: numColumns === 1 ? 0 : transforms[colIdx] }}
+                                key={`grid-${colIdx}-${idx}`}
+                            >
+                                <DevelopmentCard
+                                    card={card}
+                                    index={idx}
+                                    onClick={() => onCardSelect(card)}
+                                />
+                            </motion.div>
+                        ))}
+                    </div>
+                ))}
             </div>
         </div>
     );
